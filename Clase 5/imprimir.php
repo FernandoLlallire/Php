@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Ejercicio 1</title>
-  </head>
-  <body>
-    <?php
-  //    var_dump($_GET["e-mail"]);para que se sea por metodo post
-foreach ($_POST  as $valor) {
-  echo "$clave: $valor <br>";
+<?php
+var_dump(isnull($_GET));
+if(!isnull($_GET)){
+  foreach ($_GET as $posicion=>$valor) {
+    echo "<br>En la posicion \"".$posicion."\" el \$_GET tiene ".$valor." <br>";
+  }
 }
-    ?>
-  </body>
-</html>
+if(!isnull($_POST)){
+  foreach ($_POST as $posicion=>$valor) {
+    echo "<br>En la posicion \"".$posicion."\" el \$_POST tiene ".$valor." <br>";
+  }
+}
+ ?>

@@ -21,11 +21,26 @@
       echo "<br>La division de ($entero/$decimal) es= ";
       var_dump($div2);
       echo "<pre>";
-      $entrero++;
+      $entero++;
+      echo "<br>entrero++ ";
+      var_dump($entero);
+      echo "<pre>";
       $decimal++;
-      Sumarle 1 a $entero y $decimal.
-Sumarle 5 a $entero y restarle 0.6 a $decimal.
-En una misma línea, crear la variable $resultado, cuyo valor sea el resultado de multiplicar $entero * 2, sumarle $decimal, y dividir todo por la mitad de $entero
+      echo "<br>decimal++";
+      var_dump($decimal);
+      echo "<pre>";
+      $entero+=5;
+      echo "<br>entero+=5 ";
+      var_dump($entero);
+      echo "<pre>";
+      $decimal-=0.6;
+      echo "<br>decimal-=0.6 ";
+      var_dump($decimal);
+      echo "<pre>";
+      $resultado=($entero*2+$decimal)/($entero/2);
+      echo "<br>resultado=(entero*2+decimal)/(entero/2) ";
+      var_dump($resultado);
+      echo "<pre>";
      ?>
   </body>
 </html>
