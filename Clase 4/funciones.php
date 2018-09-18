@@ -1,47 +1,24 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Ejericio 1</title>
-  </head>
-  <body>
-    <?php
-      $numeroMagico=15;
-        function mayor($num1,$num2,$num3=NULL){
-          if(!is_numeric($num3)||$num3==NULL){
-            global $numeroMagico;
-            $num3=$numeroMagico;
-          }/*
-          if($num1==$num2&&$num1==$num3)
-            return $num1;
-          elseif ($num1>$num2 && $num1>$num3)
-            return $num1;
-          elseif($num2>$num1&& $num2>$num3)
-            return $num2;
-          else return $num3;*/
-        }
-
-        function tabla($base,$limite=NULL){
-          if($limite==NULL||!is_numeric($limite)){
-            global $numeroMagico;
-            $limite=$numeroMagico;
-          }
-          $arraySalida=[];
-          for ($i=$base, $j=0; $i<=$limite ; $i=$i+$base,$j++) {
-            $arraySalida[$j]=$i;
-          }
-          return $arraySalida;
-        }
-        echo mayor(2,2,4)."<hr>"."<br>";
-        foreach (tabla(4,21) as $value) {
-          echo $value."<br>";
-        }
-        echo "<hr>"."<br>";
-        echo "Funcion mayor con solo 2 valores mayor (2,4)= ".mayor(2,4)."    El numero magico es 15<hr>"."<br>";
-
-        foreach (tabla(3) as $value) {
-          echo $value."<br>";
-        }
-    ?>
-  </body>
-</html>
+<?php
+$numeroMagico=255;
+function mayor ($number1,$number2,$number3=""){
+  if(is_null($number3)||!is_numeric($number3)){
+    global $numeroMagico;//Tengo q definir mi scope para oider usar el numero magico
+    return (($number1>$number2) ? (($number1>$numeroMagico) ? $number1 : $numeroMagico) : (($number2>$numeroMagico) ? $number2 : $numeroMagico));
+  }else{
+    return (($number1>$number2) ? (($number1>$number3) ? $number1 : $number3) : (($number2>$number3) ? $number2 : $number3));
+  }
+}
+echo "el resultado de mayor() es ".mayor(4,7)."<br>";
+function tabla ($base,$limite=""){
+  $cuenta=1;
+  if (is_null($limite)||!is_numeric($limite)){
+    global $numeroMagico;
+    $limite=$numeroMagico;
+  }
+  while($cuenta<$limite){
+    $cuenta*=$base;
+    echo (($cuenta<$limite)?$cuenta:"")."<br>";
+  }
+}
+echo tabla(2)."<br>";
+ ?>
