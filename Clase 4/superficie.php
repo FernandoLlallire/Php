@@ -15,6 +15,9 @@ function cuadrado($lado){
   return ($lado*$lado);
 }
 function circulo($radio){
+  global $funcionesEjecutadas;//tomo la variable de quien me invoca
+  $funcionesEjecutadas++;
+  echo "\$funcionesEjecutadas=".$funcionesEjecutadas."<br>";
   return pi()*$radio*$radio;
 }
 echo "triangulo(2,4)=".triangulo(2,4)."<br>";

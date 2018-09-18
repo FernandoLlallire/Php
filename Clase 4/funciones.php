@@ -8,6 +8,9 @@
 <?php
 $numeroMagico=255;
 function mayor ($number1,$number2,$number3=""){
+  global $funcionesEjecutadas;//tomo la variable de quien me invoca
+  $funcionesEjecutadas++;
+  echo "\$funcionesEjecutadas=".$funcionesEjecutadas."<br>";
   if(is_null($number3)||!is_numeric($number3)){
     global $numeroMagico;//Tengo q definir mi scope para oider usar el numero magico
     return (($number1>$number2) ? (($number1>$numeroMagico) ? $number1 : $numeroMagico) : (($number2>$numeroMagico) ? $number2 : $numeroMagico));
