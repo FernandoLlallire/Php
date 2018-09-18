@@ -1,3 +1,10 @@
+<!--    Generar un archivo llamado funciones.php:
+
+    Definir una función mayor() que reciba 3 números y devuelva el mayor. Imprimir el resultado.
+    Definir una función tabla() que reciba un parámetro base, un parámetro límite, y devuelve un array con la secuencia de números desde el numero base hasta el numero limite, imprimir el resultado.
+    Definir una variable llamada numeroMagico, que contenga un número, dicha variable deberá estar en la 1er línea de nuestro código PHP.
+    Modificar mayor() para que si recibe sólo 2 parámetros o si el tercer parámetro NO es un número (is_numeric()), compare a esos dos números con numeroMagico.
+    Modificar tabla para que si recibe un sólo parámetro o si el segundo parámetro NO es un número, utilice numeroMagico como límite.-->
 <?php
 $numeroMagico=255;
 function mayor ($number1,$number2,$number3=""){
